@@ -1,11 +1,20 @@
+.auth-page {
+  width: 100%;
+  min-height: calc(100vh - 5rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 var(--page-padding-x, 1.25rem);
+}
+
+/* Card itself */
 .authentication {
   width: 100%;
   max-width: 26rem;
-  margin: 6rem auto 3.5rem;
+  margin: 0;
   text-align: left;
 }
 
-/* Header inside auth card */
 .authentication h2 {
   margin: 0 0 0.35rem 0;
   font-size: 1.4rem;
@@ -14,47 +23,41 @@
   color: var(--color-text-main, #111827);
 }
 
-/* Optional: if you ever wrap header text in .authentication__header */
 .authentication__header {
   text-align: center;
   color: var(--color-text-main, #111827);
 }
 
-/* Divider styling */
 .authentication hr {
   border: none;
   border-top: 1px solid rgba(148, 163, 184, 0.4);
   margin: 0.75rem 0 1.25rem;
 }
 
-/* Form layout */
 .authentication form {
   margin-bottom: 1.1rem;
   display: flex;
   flex-direction: column;
 }
 
-/* Add a bit more space between inputs and button */
 .authentication form .form-control:last-of-type {
   margin-bottom: 0.8rem;
 }
 
-/* Ensure primary action is full-width on small screens */
 .authentication button[type="submit"] {
   width: 100%;
   justify-content: center;
 }
 
-/* Secondary "switch mode" button alignment */
 .authentication > .button.button--inverse {
   width: 100%;
   justify-content: center;
   margin-top: 0.3rem;
 }
 
-/* Slightly tighter layout on very small screens */
 @media (max-width: 480px) {
-  .authentication {
-    margin: 5rem auto 3rem;
+  .auth-page {
+    min-height: calc(100vh - 4.5rem);
+    padding: 0 1rem;
   }
 }
