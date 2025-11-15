@@ -1,41 +1,31 @@
-/* App-wide layout wrapper */
-
-.app-root {
-  min-height: 100vh;
-  background: transparent; /* body already has gradient */
-}
-
-/* Main content area below top navigation */
 main {
-  margin: 5rem auto 3rem;
-  padding: 0 var(--page-padding-x);
   width: 100%;
   max-width: var(--page-max-width);
+  margin: 5rem auto 3rem;
+  padding: 0 var(--page-padding-x);
 }
 
-/* Make main more compact on very small screens */
 @media (max-width: 480px) {
   main {
-    margin: 4.25rem auto 2.5rem;
+    margin: 4.5rem auto 2.5rem;
     padding: 0 1rem;
   }
 }
 
-/* Optional helper: wrap your pages in a subtle "page" container if needed */
 .app-page {
   padding: 1.5rem 0;
 }
 
-/* If any shared Card component relies on .card, this keeps it in-theme */
 .card {
-  background: var(--color-surface);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
-  border: 1px solid var(--color-border-subtle);
+  margin: 0;
   padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-lg, 1rem);
+  background: var(--color-surface, #ffffff);
+  border: 1px solid var(--color-border-subtle, #e5e7eb);
+  box-shadow: var(--shadow-soft, 0 18px 40px rgba(15, 23, 42, 0.12));
+  overflow: hidden;
 }
 
-/* Small refinement when a Card appears in a dark area (like modals or nav) */
 .card.card--elevated {
   background: #f9fafb;
 }

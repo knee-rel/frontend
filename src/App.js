@@ -13,6 +13,7 @@ import UpdatePlace from "./places/pages/UpdatePlace";
 import Auth from "./user/pages/Auth";
 import MainNavigation from "./shared/components/Navigation/MainNavigation";
 import { AuthContext } from "./shared/context/auth-context";
+import "./App.css";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -53,10 +54,8 @@ const App = () => {
       value={{ isLoggedIn: isLoggedIn, login: login, logout: logout }}
     >
       <Router>
-        <div className="app-root">
-          <MainNavigation />
-          <main>{routes}</main>
-        </div>
+        <MainNavigation />
+        <main>{routes}</main>
       </Router>
     </AuthContext.Provider>
   );
