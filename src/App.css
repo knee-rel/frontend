@@ -1,38 +1,41 @@
-.App {
-  text-align: center;
-}
+/* App-wide layout wrapper */
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.app-root {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: transparent; /* body already has gradient */
 }
 
-.App-link {
-  color: #61dafb;
+/* Main content area below top navigation */
+main {
+  margin: 5rem auto 3rem;
+  padding: 0 var(--page-padding-x);
+  width: 100%;
+  max-width: var(--page-max-width);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Make main more compact on very small screens */
+@media (max-width: 480px) {
+  main {
+    margin: 4.25rem auto 2.5rem;
+    padding: 0 1rem;
   }
-  to {
-    transform: rotate(360deg);
-  }
+}
+
+/* Optional helper: wrap your pages in a subtle "page" container if needed */
+.app-page {
+  padding: 1.5rem 0;
+}
+
+/* If any shared Card component relies on .card, this keeps it in-theme */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--color-border-subtle);
+  padding: 1.5rem 1.75rem;
+}
+
+/* Small refinement when a Card appears in a dark area (like modals or nav) */
+.card.card--elevated {
+  background: #f9fafb;
 }
