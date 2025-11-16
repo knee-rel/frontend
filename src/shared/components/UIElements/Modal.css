@@ -1,5 +1,5 @@
 .modal {
-  z-index: 100;
+  z-index: 170;
   position: fixed;
   top: 22vh;
   left: 10%;
@@ -18,10 +18,12 @@
 
 .modal__header h2 {
   margin: 0.5rem;
+  color: white;
 }
 
 .modal__content {
   padding: 1rem 0.5rem;
+  color: var(--color-text-main, #111827);
 }
 
 .modal__footer {
