@@ -1,27 +1,29 @@
-import React, { useRef, useEffect } from 'react';
+import React from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 
-import './Map.css';
+import "./Map.css";
 
-const Map = props => {
-  const mapRef = useRef();
-  
-  const { center, zoom } = props;
+const Map = (props) => {
+  const { center, zoom, className, style } = props;
 
-  useEffect(() => {
-    const map = new window.google.maps.Map(mapRef.current, {
-      center: center,
-      zoom: zoom
-    });
-  
-    new window.google.maps.Marker({ position: center, map: map });
-  }, [center, zoom]);  
+  const position = [center.lat, center.lng];
 
   return (
-    <div
-      ref={mapRef}
-      className={`map ${props.className}`}
-      style={props.style}
-    ></div>
+    <MapContainer
+      center={position}
+      zoom={zoom}
+      className={`map ${className || ""}`}
+      style={style}
+      scrollWheelZoom={false}
+    >
+      <TileLayer
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      />
+      <Marker position={position}>
+        <Popup>This is the exact location.</Popup>
+      </Marker>
+    </MapContainer>
   );
 };
 
